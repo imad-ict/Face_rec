@@ -9,7 +9,7 @@ facemarks = face_recognition.face_landmarks(image)
 
 number_faces = len(facemarks)
 
-print('{} face found.'.format(number_faces))
+print(f'{number_faces} face found.')
 
 image_array = PIL.Image.fromarray(image)
 
@@ -17,7 +17,7 @@ draw = PIL.ImageDraw.Draw(image_array)
 
 for marks in facemarks:
     for name, listofpoints in marks.items():
-        print("{} in this face has the following points:{}".format(name,listofpoints))
+        print(f"{name} in this face has the following points:{listofpoints}")
         draw.line(listofpoints, fill='blue',width=4)
 
 image_array.show()
